@@ -1,0 +1,200 @@
+@keyframes from_right{
+    from{margin-right: 100%; opacity: 0%;}
+    to{margin-right: 0%; opacity: 100%;}
+}
+
+@keyframes from_left{
+    from{margin-left: 100%;}
+    to{margin-left: 0%;}
+}
+
+@keyframes button_anim {
+    from{background-color: white; color: white;}
+    to{background-color: black; color: white;}
+}
+
+.table_img_container{
+    background-color: gainsboro; 
+    animation-name: from_left;
+    animation-duration: 1s;
+}
+
+.table_img{
+    width: 100%;
+    height: 100%;
+}
+
+#come_right{
+    animation-name: from_right;
+    animation-duration: 2s;
+
+}
+
+form{
+    display: flexbox;
+    width: 80%;
+    padding-left: 1%;
+}
+
+label{
+    width: 30%;
+    float: left;
+    animation-name: come_right;
+    animation-duration: 1s;
+}
+
+input, select{
+    width: 25%;
+    float: left;
+    animation-name: come_right;
+    animation-duration: 1s;
+}
+
+input[type=checkbox]{
+    transform: scale(2);
+}
+
+.checkbox_div{
+    padding: 2%;
+}
+
+.xxl_checkbox{
+    width: 40%;
+}
+
+#Title{
+    size: 45px;
+    color: white;
+    font-family: "Open Sans Regular", "Open Sans Light", "Open Sans Bold", sans-serif;;
+}
+
+#Title_div{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#Banner_div{
+    text-align: center;
+    
+}
+
+#Banner_img{
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+    filter: brightness(80%);
+
+}
+
+#more_info{
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    top: 45%;
+    left: 50%;
+    padding: 1% 2%;
+    display: inline-block;
+    font-size: 16px;
+    font-family: monospace;
+    transition: 0.3s;
+    border: 0px;
+}
+
+#more_info:hover{
+    background-color: black;
+    color: white;
+}
+
+#checklist_title{
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 5%;
+}
+
+#anchor_box{
+    background-color:rgb(236, 239, 236);
+    border: 1px;
+    border-color: black;
+    text-align: left;
+    float: right;
+    padding: 2%;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 3em;
+    padding-top: 10px;
+    width: 18%;
+}
+
+.anchor_link{
+    color: black;
+}
+
+.table_form{
+    width: 100%;
+}
+
+td{
+    padding: 1%;
+}
+
+.table_label{
+    width: 10%;
+}
+
+.table_input{
+    width: 80%;
+}
+
+.amount{
+    width: 80%;
+}
+
+.check_label{
+    width: 40%;
+    float: left;
+}
+
+@media (max_width: 700px){
+    td{
+        flex-direction: column;
+    }
+}
+
+p{
+    font-family: "Open Sans Regular", "Open Sans Light", "Open Sans Bold", sans-serif;
+}
+
+.table_label2{
+    width: 30%;
+}
+
+.table_input_row2{
+    width: 20%;
+}
+
+.table_input2{
+    width: 50%;
+}
+
+
+#submit{
+    background-color: black;
+    color: white;
+    border: 0px;
+    padding: 1% 5%;
+    font-family: monospace;
+    transition: 0.3s;
+}
+
+#submit:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid;
+    border-color: black;
+}
+
+
