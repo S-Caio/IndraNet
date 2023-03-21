@@ -65,27 +65,33 @@ input[type=checkbox]{
 #Title{
     size: 45px;
     color: white;
-    font-family: "Open Sans Regular", "Open Sans Light", "Open Sans Bold", sans-serif;;
+    font-family: "Open Sans Regular", "Open Sans Light", "Open Sans Bold", sans-serif;
 }
 
 #Title_div{
     position: absolute;
-    top: 30%;
+    width: 100%;
+    top: 37%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #Banner_div{
     text-align: center;
-    
 }
+
 
 #Banner_img{
     position: relative;
     object-fit: cover;
     width: 100%;
     height: 500px;
-    filter: brightness(80%);
+    filter: brightness(50%);
+
+}
+
+h6{
+    font-weight: bolder;
 
 }
 
@@ -93,7 +99,7 @@ input[type=checkbox]{
     position: absolute;
     text-align: center;
     transform: translate(-50%, -50%);
-    top: 45%;
+    top: 50%;
     left: 50%;
     padding: 1% 2%;
     display: inline-block;
@@ -127,6 +133,8 @@ input[type=checkbox]{
     top: 3em;
     padding-top: 10px;
     width: 18%;
+    
+    overflow-y: scroll;
 }
 
 .anchor_link{
@@ -196,5 +204,17 @@ p{
     border: 2px solid;
     border-color: black;
 }
+
+input, select{
+    border: 1px solid;
+    border-color: black;
+}
+
+input[type = "file"]{
+    border: 0px;
+}
+
+
+
 
 

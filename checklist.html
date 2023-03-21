@@ -10,14 +10,14 @@
 <body>
     <nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">IndraNet</a>
+          <a class="navbar-brand" href="home_page.html">IndraNet</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link" aria-current="page" href="home_page.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Electric boating</a>
@@ -47,9 +47,15 @@
     <a href="#Installatie" class="anchor_link">Checklist installatie (vink aan)</a><br>
     <a href="#lijst_DC" class="anchor_link">Lijst met DC Hoofdgebruikers, etc</a><br>
     <a href="#Markeringen" class="anchor_link">Markeringen</a><br>
-    <a href="#Hoofdschakelaar" class="anchor_link">Hoofdschakelaar</a>
-    <a href="#verbindingen_en_terminals" class="anchor_link">Verbindingen en terminals</a>
+    <a href="#Hoofdschakelaar" class="anchor_link">Hoofdschakelaar</a><br>
+    <a href="#verbindingen_en_terminals" class="anchor_link">Verbindingen en terminals</a><br>
+    <a href="#fabrikant" class="anchor_link">Fabrikant opgegeven aanhaalmomenten</a><br>
+    <a href="#testen" class="anchor_link">Testen van het system</a><br>
+    <a href="#stalen" class="anchor_link">Stalen en aluminium vaartuigen</a><br>
+    <a href="#notities" class="anchor_link">Notities</a><br>
     </div>
+
+    <br>
     <form>
         <h6 id="Algemene_informatie">Algemene informatie</h6>
         <label class="short_label" for="Eigenaar vaartuig">Eigenaar vaartuig:</label>
@@ -252,7 +258,47 @@
           </div>
         </div>
         <br>
-        <hr>
+        <hr id="fabrikant">
+        <h6>De door de fabrikant opgegeven aanhaalmomenten zijn voor alle in het systeem opgenomen onderdelen, waarop van toepassing, nageleefd en opgeschreven</h6>
+        <table class="table_form">
+          <thead>
+            <th>Onderdeel van het systeem</th>
+            <th>Opgegeven aanhaalmoment</th>
+            <th>Gecontroleerd</th>
+          </thead>
+          <tr>
+            <td>Accu(‘s)</td>
+            <td><input type="number" name="accu_aanhalmoment" id="accu_aanhalmoment"><span style="margin-left: 2px;">Nm</span></td>
+            <td><input type="checkbox" name="accu_gecontroleerd" id="accu_gecontroleerd"></td>
+          </tr>
+          <tr>
+            <td>Busbar</td>
+            <td><input type="number" name="busbar_aanhalmoment" id="busbar_aanhalmoment"><span style="margin-left: 2px;">Nm</span></td>
+            <td><input type="checkbox" name="busbar_gecontroleerd" id="busbar_gecontroleerd"></td>
+          </tr>
+          <tr>
+            <td>Lader</td>
+            <td><input type="number" name="lader_aanhalmoment" id="lader_aanhalmoment"><span style="margin-left: 2px;">Nm</span></td>
+            <td><input type="checkbox" name="lader_gecontroleerd" id="lader_gecontroleerd"></td>
+          </tr>
+          <tr>
+            <td>Motor controller</td>
+            <td><input type="number" name="motor_controller_aanhalmoment" id="motor_controller_aanhalmoment"><span style="margin-left: 2px;">Nm</span></td>
+            <td><input type="checkbox" name="motor_controller_gecontroleerd" id="motor_controller_gecontroleerd"></td>
+          </tr>
+          <tr>
+            <td>Fasen Motor</td>
+            <td><input type="number" name="fasen_motor_aanhalmoment" id="fasen_motor_aanhalmoment"><span style="margin-left: 2px;">Nm</span></td>
+            <td><input type="checkbox" name="fasen_motor_gecontroleerd" id="fasen_motor_gecontroleerd"></td>
+          </tr>
+          <tr>
+            <td>Zekeringen in het systeem</td>
+            <td><input type="number" name="zekeringen_aanhalmoment" id="zekeringen_aanhalmoment"><span style="margin-left: 2px;">Nm</span></td>
+            <td><input type="checkbox" name="zekeringen_gecontroleerd" id="zekeringen_gecontroleerd"></td>
+          </tr>
+        </table>
+        <br>
+        <hr id="testen">
         <h6>Testen van het Systeem</h6>
         <table class="table_form">
           <thead>
@@ -284,12 +330,12 @@
         <br><br><br><br>
         <div class="xxl_checkbox" style="float: left;"><input class="table_input" type="number" name="temperatuur" id="temperatuur"><span style="margin-left: -20px;">ºC</span></div>
         <br>
-        <hr>
+        <hr id="stalen">
         <h6>Indien van toepassing: stalen en aluminium vaartuigen: (vink aan)</h6>
         <div class="xxl_checkbox" style="width: 60%; float: left;"><label style="width: 100%;" for="hele_system_gecontroleerd">Is er in het geval van een aluminium vaartuig gebruik gemaakt van een dubbelpolige hoofdschakelaar en is er een galvanische isolator in het systeem opgenomen? (Bij aluminium vaartuigen bestaat er een extra risico op galvanische corrosie. Daarom is het belangrijk elektrische lekkages te kunnen meten.)</label></div>
         <div class="xxl_checkbox" style="float: left;"><input class="table_input" type="checkbox" name="hele_system_gecontroleerd" id="hele_system_gecontroleerd"></div>
         <br><br><br><br>
-        <hr>
+        <hr id="notities">
         <h6>Bijzonderheden / Notities</h6>
         <textarea style="width: 80%;" name="Notities" id="Notities" cols="30" rows="10"></textarea><br>
         <div>Foto's of bestanden (Optioneel)</div><input type="file" name="Photo1"><input type="file" name="Photo2"><br><br><input type="file" name="Photo3">
