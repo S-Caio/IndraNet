@@ -10,14 +10,14 @@
 <body>
     <nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="home_page.html">IndraNet</a>
+          <a class="navbar-brand" href="index.html">IndraNet</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="home_page.html">Home</a>
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Electric boating</a>
@@ -112,34 +112,43 @@
         <br id="Installatie"><br>
         <hr>
         <h6>Checklist installatie (vink aan)</h6>
-        <br><br>
-        <label class="xxl_checkbox" for="system_check1">Het systeem is een volledig zwevend en geïsoleerd tweedraads systeem of een tweedraads systeem met een negatieve aarde waarbij de romp niet als geleider wordt gebruikt.</label>
-        <div class="checkbox_div"><input type="checkbox" name="system_check1" id="system_check1"></div>
-        <br><br>
+
+        <div class="container">
+          <div class="row">
+            <div class="xxl_checkbox">Het systeem is een volledig zwevend en geïsoleerd tweedraads systeem of een tweedraads systeem met een negatieve aarde waarbij de romp niet als geleider wordt gebruikt.</div>
+            <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check1" id="system_check1"></div></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="xxl_checkbox">De waarde van de zekering is niet groter dan de maximale waarde van de kleinste geleider die door de zekering beschermd wordt.</div>
+            <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check2" id="system_check2"></div></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="xxl_checkbox">Voor alle gebruikers zijn vlam vertragende flexibele geleiders gebruikt waarvan de dikten zijn vastgesteld op de maximale stroom die zij mogen dragen. De spanningsverliezen tussen stroombron en gebruiker die mogen optreden zijn max 10% bij normale verbruikers en max 3% bij hoofdstroomgeleiders, navigatieverlichting, bilgepompen en anderen veiligheidsapparatuur.</div>
+            <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check3" id="system_check3"></div></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="xxl_checkbox">Alle geleiders zijn geplaatst in kabelgoten of op kabelrails. Dubbel geïsoleerde geleiders mogen ook om de 45cm worden vastgezet. Enkel geïsoleerde geleiders moeten om de 30cm worden vastgezet.</div>
+            <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check4" id="system_check4"></div></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="xxl_checkbox">Alle geleiders moeten geïdentificeerd en terug herleid kunnen worden naar het elektrische schema.</div>
+            <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check5" id="system_check5"></div></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="xxl_checkbox">Is er een wisselstroom systeem aanwezig (naast walstroom tbv. Acculader)? AC en DC geleiders zijn geplaatst met een minimale onderlinge afstand van 10cm.</div>
+            <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check6" id="system_check6"></div></div>
+          </div>
+          
+
+
+        </div>
+
         <br>
-        <label class="xxl_checkbox" for="system_check2">De waarde van de zekering is niet groter dan de maximale waarde van de kleinste geleider die door de zekering beschermd wordt. </label>
-        <div class="checkbox_div"><input type="checkbox" name="system_check2" id="system_check2"></div>
-        <br><br>
-        <label class="xxl_checkbox" for="system_check3">Voor alle gebruikers zijn vlam vertragende flexibele geleiders gebruikt waarvan de dikten zijn vastgesteld op de maximale stroom die zij mogen dragen. De spanningsverliezen tussen stroombron en gebruiker die mogen optreden zijn max 10% bij normale verbruikers en max 3% bij hoofdstroomgeleiders, navigatieverlichting, bilgepompen en anderen veiligheidsapparatuur.</label>
-        <div class="checkbox_div"><input type="checkbox" name="system_check3" id="system_check3"></div>
-        <br><br><br>
-        <br><br><br><br>
-        <label class="xxl_checkbox" for="system_check4">
-            Alle geleiders zijn geplaatst in kabelgoten of op kabelrails. Dubbel geïsoleerde geleiders mogen ook om de 45cm worden vastgezet. Enkel geïsoleerde geleiders moeten om de 30cm worden vastgezet.</label>
-        <div class="checkbox_div"><input type="checkbox" name="system_check4" id="system_check4"></div>
-        <br><br><br>
-        <label class="xxl_checkbox" for="system_check5">
-            Alle geleiders moeten geïdentificeerd en terug herleid kunnen worden naar het elektrische schema. </label>
-        <div class="checkbox_div"><input type="checkbox" name="system_check5" id="system_check5"></div>
-        <br><br>
-        <label class="xxl_checkbox" for="system_check5">
-            Alle geleiders moeten geïdentificeerd en terug herleid kunnen worden naar het elektrische schema. </label>
-        <div class="checkbox_div"><input type="checkbox" name="system_check5" id="system_check5"></div>
-        <br><br>
-        <label class="xxl_checkbox" for="system_check6">
-            Is er een wisselstroom systeem aanwezig (naast walstroom tbv. Acculader)? AC en DC geleiders zijn geplaatst met een minimale onderlinge afstand van 10cm.</label>
-        <div class="checkbox_div"><input type="checkbox" name="system_check6" id="system_check6"></div>
-        <br><br>
         <hr id="lijst_DC">
         <h6>Lijst met DC Hoofdgebruikers met zekeringen en gemeten spanningsverlies bij maximale stroom.</h6>
         <table class="table_form">
