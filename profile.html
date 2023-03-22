@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Indranet </title>
+        <title>Indra</title>
+        <meta charset="utf-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{url_for('static', filename='actual_css.css')}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+      <nav class="navbar sticky-top navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">IndraNet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Electric boating</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About us</a>
+              </li>
+            </ul> 
+            <div>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">My Profile</a>
+                </li>
+                <li>
+                  <a class = "nav-link" href="#"> <img src="{{url_for('static', filename='istockphoto-1337144146-170667a.jpg')}}" class="profile"> </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <br>
+      <h2> <img src="{{url_for('static', filename='img_avatar.png')}}" alt="Avatar" class="avatar"> &NonBreakingSpace; {{ placeholder }} </h2>
+      
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'addboat')" id="defaultOpen">Add New Boat</button>
+        <button class="tablinks" onclick="openCity(event, 'logbook')">Your Logbook</button>
+        <button class="tablinks" onclick="openCity(event, 'maintenance')">Perform Maintenance</button>
+      </div>
+      
+      <div id="addboat" class="tabcontent">
+        <h3> Checklist </h3> 
+        <form>
+          <h6 id="Algemene_informatie">Algemene informatie</h6>
+          <label class="short_label" for="Eigenaar vaartuig">Eigenaar vaartuig:</label>
+          <input type="text" name="Eigenaar_vaartuig" id="ei_vaartuig"> 
+          <br><br>
+          <label class="short_label" for="Naam vaartuig">Naam vaartuig:</label>
+          <input type="text" name="Naam_vaartuig" id="Na_vaartuig">
+          <br><br>
+          <label class="short_label" for="rompnummer">Rompnummer:</label>
+          <input type="text" name="rompnummer" id="rompnummer">
+          <br><br>
+          <label class="short_label" for="datum">Datum:</label>
+          <input type="date" name="datum" id="datum">
+          <br><br>
+          <label class="short_label" for="Naam_controleur">Naam controleur:</label>
+          <input type="text" name="Naam_controleur" id="controleur">
+          <br><br>
+          <label class="short_label" for="Werf">Werf van inbouw:</label>
+          <input type="text" name="Werf" id="werf">
+          <br><br>
+          <label class="short_label" for="Naam vaartuig">Handtekening:</label>
+          <input type="text" name="Naam_vaartuig" id="Na_vaartuig">
+          <br id="System"><br>
+          <hr>
+          <h6>Informatie over het system</h6>
+          <br><br>
+          <label class="large_label" for="nominale_spanning">Nominale spanning van het (hoofd) gelijkstroom systeem:</label>
+          <input type="number" name="nominale_spanning" id="spanning_nom"><span style="margin-left: -20px;">V</span>
+          <br><br>
+          <br><br>
+          <label class="short_label" for="aantal_gescheiden">Aantal gescheiden accugroepen (indien meerdere aanwezig):</label>
+          <input type="number" name="Naam_vaartuig" id="Na_vaartuig">
+          <br><br>
+          <br><br>
+          <label class="short_label" for="soort_accu">Soort accu:</label>
+          <select name="soort_accu" id="soort_accu">
+              <option value="tractie">Tractie</option>
+              <option value="semi-tractie">Semi tractie</option>
+              <option value="AGM">AGM</option>
+              <option value="Gel">Gel</option>
+              <option value="LFP">LFP</option>
+              <option value="NMC">NMC</option>
+              <option value="ander">Ander</option>
+          </select>
+          <br><br>
+          <label class="short_label" for="spanning_p_accu">Nominale spanning per accu:</label>
+          <input type="number" name="spanning_p_accu" id="spanning_p_accu"><span style="margin-left: -20px;">V</span>
+          <br><br>
+          <label class="short_label" for="aantal_accu">Aantal accu's:</label>
+          <input type="number" name="aantal_accu" id="aantal_acuu"><span style="margin-left: -60px;">Stuk(s)</span>
+          <br><br>
+          <label class="short_label" for="capaciteit">Totale capaciteit van het accupakket:</label>
+          <input type="number" name="capaciteit" id="capaciteit"><span style="margin-left: -25px;">Ah</span>
+          <br id="Installatie"><br>
+          <hr>
+          <h6>Checklist installatie (vink aan)</h6>
+          <br><br>
+          <div class="container">
+            <div class="row">
+              <div class="xxl_checkbox">Het systeem is een volledig zwevend en geïsoleerd tweedraads systeem of een tweedraads systeem met een negatieve aarde waarbij de romp niet als geleider wordt gebruikt.</div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check1" id="system_check1"></div></div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="xxl_checkbox">De waarde van de zekering is niet groter dan de maximale waarde van de kleinste geleider die door de zekering beschermd wordt.</div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check2" id="system_check2"></div></div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="xxl_checkbox">Voor alle gebruikers zijn vlam vertragende flexibele geleiders gebruikt waarvan de dikten zijn vastgesteld op de maximale stroom die zij mogen dragen. De spanningsverliezen tussen stroombron en gebruiker die mogen optreden zijn max 10% bij normale verbruikers en max 3% bij hoofdstroomgeleiders, navigatieverlichting, bilgepompen en anderen veiligheidsapparatuur.</div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check3" id="system_check3"></div></div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="xxl_checkbox">Alle geleiders zijn geplaatst in kabelgoten of op kabelrails. Dubbel geïsoleerde geleiders mogen ook om de 45cm worden vastgezet. Enkel geïsoleerde geleiders moeten om de 30cm worden vastgezet.</div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check4" id="system_check4"></div></div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="xxl_checkbox">Alle geleiders moeten geïdentificeerd en terug herleid kunnen worden naar het elektrische schema.</div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check5" id="system_check5"></div></div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="xxl_checkbox">Is er een wisselstroom systeem aanwezig (naast walstroom tbv. Acculader)? AC en DC geleiders zijn geplaatst met een minimale onderlinge afstand van 10cm.</div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check6" id="system_check6"></div></div>
+            </div>  
+          <br><br>
+          <hr id="lijst_DC">
+          <h6>Lijst met DC Hoofdgebruikers met zekeringen en gemeten spanningsverlies bij maximale stroom.</h6>
+          <table class="table_form">
+            <thead>
+              <th id="gebruiker">Gebruiker</th>
+              <th>Maximale stroom</th>
+              <th>Zekering en soort</th>
+              <th>Spanningsverlies in %</th>
+            </thead>
+            <br>
+            <tr>
+              <td class="table_label"><label for="motor">Motor</label></td>
+              <td><input onblur="findTotal()" class="amount" name="input_a" class="table_input" type="number" name="motor_1" id="motor_strom"><span style="margin-left: -20px;">A</span></td>
+              <td><input class="table_input" type="number" name="motor_2" id="motor_zekering"><span style="margin-left: -20px;">A</span></td>
+              <td><input class="table_input" type="number" name="motor_3" id="motor_%"><span style="margin-left: -20px;">%</span></td>
+            </tr>
+            
+            <tr>
+              <td class="table_label"><label for="Boegschroef">Boegschroef</label></td>
+              <td><input onblur="findTotal()" class="amount" name="input_b" class="table_input" type="number" name="Boegschroef_1" id="Boegschroef_strom"><span style="margin-left: -20px;">A</span></td>
+              <td><input class="table_input" type="number" name="Boegschroef_2" id="Boegschroef_zekering"><span style="margin-left: -20px;">A</span></td>
+              <td><input class="table_input" type="number" name="Boegschroef_3" id="Boegschroef_%"><span style="margin-left: -20px;">%</span></td>
+            </tr>
+            <tr>
+              <td class="table_label"><label for="Omvormer AC">Omvormer AC</label></td>
+              <td><input onblur="findTotal()" class="amount" name="input_c" class="table_input" type="number" name="Omvormer AC_1" id="Omvormer AC_strom"><span style="margin-left: -20px;">A</span></td>
+              <td><input class="table_input" type="number" name="Omvormer AC_2" id="Omvormer AC_zekering"><span style="margin-left: -20px;">A</span></td>
+              <td><input class="table_input" type="number" name="Omvormer AC_3" id="Omvormer AC_%"><span style="margin-left: -20px;">%</span></td>
+            </tr>
+            <tr>
+              <td class="table_label"><label for="Omvormer DC">Omvormer DC</label></td>
+              <td><input onblur="findTotal()" class="amount" inputmode="input_d" class="table_input" type="number" name="Omvormer DC_1" id="Omvormer DC_strom"><span style="margin-left: -20px;">A</span></td>
+              <td><input class="table_input" type="number" name="Omvormer DC_2" id="Omvormer DC_zekering"><span style="margin-left: -20px;">A</span></td>
+              <td><input class="table_input" type="number" name="Omvormer DC_3" id="Omvormer DC_%"><span style="margin-left: -20px;">%</span></td>
+            </tr>
+            <tr>
+              <td id="Markeringen">Totaal</td>
+              <td><input type="text" name="sum" id="totalordercost" readonly /></td>
+            </tr>
+          </table>
+          <hr>
+          <h6>Markeringen (vink aan wanneer van toepassing)</h6>
+          <div class="container">
+            <div class="row">
+              <div class="xxl_checkbox">Panelen, schakelkasten en verbindingsdozen zijn gemarkeerd met waarschuwing symbolen en systeem spanningen</div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="system_check6" id="system_check6"></div></div>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <h6>Accu's (vink aan)</h6>
+          <br><br>
+          <div class="container">
+            <div class="row">
+              <div class="xxl_checkbox">Het systeem is een volledig zwevend en geïsoleerd tweedraads systeem of een tweedraads systeem met een negatieve aarde waarbij de romp niet als geleider wordt gebruikt.</div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="accus_1" id="accus_1"></div></div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="xxl_checkbox">
+                Wanneer er gebruik wordt gemaakt van natte cellen dan moeten deze geplaatst worden in passende accubakken welke bestand zijn tegen accuzuur. Daarnaast moet de ruimte waarin de accu’s geplaatst zijn voorzien zijn van adequate ventilatie. Wanneer de ruimte mechanisch geventileerd wordt dan zijn explosieveilige ventilatoren verplicht.</div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="accus_1" id="accus_1"></div></div>
+            </div>
+          </div>
+          <br>
+          <hr id="Hoofdschakelaar">
+          <h6>Hoofdschakelaar / Werkschakelaar (vink aan)</h6>
+          <table style="border-collapse: collapse;">
+            <tr style="width: 10%;">
+              <td style="white-space:pre-line; width: 40%;"><label style="width: 100%;" for="capaciteit">Binnen 180cm van de positieve geleider van de accubank is een werkschakelaar geplaatst met een minimum continuvermogen 
+                groter of gelijk aan de gezamenlijk opgetelde waarden van de diverse hoofdzekeringen die achter de hoofdschakelaar zitten. <br>
+                De geplaatste werkschakelaar heeft een capaciteit van:</label></td>
+              <tr><tr><td style="width: 15%;"><input style="width: 100%;" type="number" name="capaciteit" id="capaciteit"><span style="margin-left: -20px;">A</span></td></tr></tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td style="white-space:pre-line; width: 40%;"><label style="width: 100%;" for="capaciteit">De geplaatste werkschakelaar is daarmee groter dan de opgetelde waarden uit de tabel bij artikel 4</label></td>
+              <td><input type="checkbox" name="capaciteit_chk" id="capaciteit_chk"></td>
+            </tr>
+          </table>
+          <br><br>
+          <hr id="verbindingen_en_terminals">
+  
+          <h6>Verbindingen en terminals (vink aan)</h6>
+          <br><br>
+          <div class="container">
+            <div class="row">
+              <div class="xxl_checkbox">
+                Alle verbindingen hebben geschikte terminals waarvan de gebruikte metalen galvanisch compatibel zijn (aluminium en blank staal mogen niet worden gebruikt in een elektrisch circuit.</div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="geschikte_terminals" id="geschikte_terminals"></div></div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="xxl_checkbox">
+                Het juiste gereedschap, de juiste terminals en de juiste maatvoeringen zijn gebruikt bij het maken van verbindingen.</div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="gebruikt_bij_het_maken" id="gebruikt_bij_het_maken"></div></div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="xxl_checkbox">
+                Insteekklemmen zonder kabelhulsje mogen worden gebruikt bij flexibele geleiders tot 20A wanneer geplaatst in aanraakveilige behuizingen zoals schakelkasten of lasdozen.
+              </div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="flexibele_geleiders" id="flexibele_geleiders"></div></div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="xxl_checkbox">
+                Alle pluspolen zijn beschermd tegen aanraking.
+              </div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="pluspolen" id="pluspolen"></div></div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="xxl_checkbox">Alle verbindingen zijn voldoende afgeschermd en zo gemonteerd dat eventueel condens of vocht geen schade kan toebrengen aan de geleider</div>
+              <div class="xxl_checkbox"><div class="checkbox_div"><input type="checkbox" name="voldoende_verbindingen" id="voldoende_verbindingen"></div></div>
+            </div>
+          </div>
+          <br>
+          <hr id="fabrikant">
+          <h6>De door de fabrikant opgegeven aanhaalmomenten zijn voor alle in het systeem opgenomen onderdelen, waarop van toepassing, nageleefd en opgeschreven</h6>
+          <table class="table_form">
+            <thead>
+              <th>Onderdeel van het systeem</th>
+              <th>Opgegeven aanhaalmoment</th>
+              <th>Gecontroleerd</th>
+            </thead>
+            <tr>
+              <td>Accu(‘s)</td>
+              <td><input type="number" name="accu_aanhalmoment" id="accu_aanhalmoment"><span style="margin-left: 2px;">Nm</span></td>
+              <td><input type="checkbox" name="accu_gecontroleerd" id="accu_gecontroleerd"></td>
+            </tr>
+            <tr>
+              <td>Busbar</td>
+              <td><input type="number" name="busbar_aanhalmoment" id="busbar_aanhalmoment"><span style="margin-left: 2px;">Nm</span></td>
+              <td><input type="checkbox" name="busbar_gecontroleerd" id="busbar_gecontroleerd"></td>
+            </tr>
+            <tr>
+              <td>Lader</td>
+              <td><input type="number" name="lader_aanhalmoment" id="lader_aanhalmoment"><span style="margin-left: 2px;">Nm</span></td>
+              <td><input type="checkbox" name="lader_gecontroleerd" id="lader_gecontroleerd"></td>
+            </tr>
+            <tr>
+              <td>Motor controller</td>
+              <td><input type="number" name="motor_controller_aanhalmoment" id="motor_controller_aanhalmoment"><span style="margin-left: 2px;">Nm</span></td>
+              <td><input type="checkbox" name="motor_controller_gecontroleerd" id="motor_controller_gecontroleerd"></td>
+            </tr>
+            <tr>
+              <td>Fasen Motor</td>
+              <td><input type="number" name="fasen_motor_aanhalmoment" id="fasen_motor_aanhalmoment"><span style="margin-left: 2px;">Nm</span></td>
+              <td><input type="checkbox" name="fasen_motor_gecontroleerd" id="fasen_motor_gecontroleerd"></td>
+            </tr>
+            <tr>
+              <td>Zekeringen in het systeem</td>
+              <td><input type="number" name="zekeringen_aanhalmoment" id="zekeringen_aanhalmoment"><span style="margin-left: 2px;">Nm</span></td>
+              <td><input type="checkbox" name="zekeringen_gecontroleerd" id="zekeringen_gecontroleerd"></td>
+            </tr>
+          </table>
+          <br>
+          <hr id="testen">
+          <h6>Testen van het Systeem</h6>
+          <table class="table_form">
+            <thead>
+              <th></th>
+              <th>Spanning</th>
+              <th>Stroom</th>
+            </thead>
+            <br>
+            <tr>
+              <td class="table_label2"><label for="rust">In Rust</label></td>
+              <td><input class="table_input2" type="number" name="rust_spanning" id="rust_spanning"><span style="margin-left: -20px;">V</span></td>
+              <td><input class="table_input2" type="number" name="rust_stroom" id="rust_stroom"><span style="margin-left: -20px;">V</span></td>
+            </tr>
+            <tr>
+              <td class="table_label2"><label for="opladen">Bij Opladen</label></td>
+              <td><input class="table_input2" type="number" name="opladen_spanning" id="rust_spanning"><span style="margin-left: -20px;">V</span></td>
+              <td><input class="table_input2" type="number" name="opalden_stroom" id="rust_stroom"><span style="margin-left: -20px;">V</span></td>
+            </tr>
+            <tr>
+              <td class="table_label2"><label for="maximale_belasting">Bij Maximale Belasting</label></td>
+              <td><input class="table_input2" type="number" name="maximale_spanning" id="maximale_spanning"><span style="margin-left: -20px;">V</span></td>
+              <td><input class="table_input2" type="number" name="maximale_stroom" id="maximale_stroom"><span style="margin-left: -20px;">V</span></td>
+            </tr>
+          </table>
+          <div class="xxl_checkbox" style="width: 60%; float: left;"><label style="width: 100%;" for="hele_system_gecontroleerd">Het gehele systeem inclusief alle bijbehorende subsystemen zijn gecontroleerd en werken naar behoren</label></div>
+          <div class="xxl_checkbox" style="float: left;"><input class="table_input" type="checkbox" name="hele_system_gecontroleerd" id="hele_system_gecontroleerd"></div>
+          <br><br><br>
+          <div class="xxl_checkbox" style="width: 100%; float: left; white-space: normal;"><label style="width: 100%;" for="hele_system_gecontroleerd"><i> Het systeem heeft een duurtest onder belasting van tenminste 5 min ondergaan. Hierbij zijn de verbindingen, geleiders en andere onderdelen gecontroleerd op oplopende temperaturen m.b.v. een infrarood thermometer. Doel is om hierbij slechte verbindingen op te sporen welke brand kunnen veroorzaken. </i><br> <b>Maximaal gemeten temperatuur: </b></label></div>
+          <br><br><br><br>
+          <div class="xxl_checkbox" style="float: left;"><input class="table_input" type="number" name="temperatuur" id="temperatuur"><span style="margin-left: -20px;">ºC</span></div>
+          <br>
+          <hr id="stalen">
+          <h6>Indien van toepassing: stalen en aluminium vaartuigen: (vink aan)</h6>
+          <div class="xxl_checkbox" style="width: 60%; float: left;"><label style="width: 100%;" for="hele_system_gecontroleerd">Is er in het geval van een aluminium vaartuig gebruik gemaakt van een dubbelpolige hoofdschakelaar en is er een galvanische isolator in het systeem opgenomen? (Bij aluminium vaartuigen bestaat er een extra risico op galvanische corrosie. Daarom is het belangrijk elektrische lekkages te kunnen meten.)</label></div>
+          <div class="xxl_checkbox" style="float: left;"><input class="table_input" type="checkbox" name="hele_system_gecontroleerd" id="hele_system_gecontroleerd"></div>
+          <br><br><br><br>
+          <hr id="notities">
+          <h6>Bijzonderheden / Notities</h6>
+          <textarea style="width: 80%;" name="Notities" id="Notities" cols="30" rows="10"></textarea><br>
+          <div>Foto's of bestanden (Optioneel)</div><input type="file" name="Photo1"><input type="file" name="Photo2"><br><br><input type="file" name="Photo3">
+          <input type="file" name="Photo4"><br><br>
+          <input type="submit" id="submit">
+      
+        </form>
+      </div>
+      
+      <div id="logbook" class="tabcontent">
+        <h3> Logbook </h3>
+        <p>Boat information...</p> 
+      </div>
+      
+      <div id="maintenance" class="tabcontent">
+        <h3> Maintenance </h3>
+        <p>Checklist for existing boat...</p>
+      </div>
+      
+      <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+      </script>
+         
+    </body>
+</html> 
+      
